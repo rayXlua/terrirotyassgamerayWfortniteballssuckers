@@ -1,0 +1,79 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/WetCheezit/Bracket-V2/main/src.lua"))()
+
+local Window, MainGUI = Library:CreateWindow("venx.com")
+
+local Main = Window:CreateTab("Main")
+local Combat = Window:CreateTab("Player")
+local Teleports = Window:CreateTab("Teleports")
+local Settings = Window:CreateTab("Settings")
+local Credits = Window:CreateTab("Credits")
+
+local MainGroup1 = Main:CreateGroupbox("Random Stuff", "Left")
+local MainGroup2 = Main:CreateGroupbox("ESP", "Right")
+
+local FlyButton = MainGroup1:CreateButton("Fly (X)",function()
+end)
+local FakeMacro = MainGroup1:CreateButton("Fake Macro (Q)",function()
+end)
+MainGroup2:CreateToggle("Name ESP", function(state)
+end)
+
+local CombatGroup1 = Combat:CreateGroupbox("Random", "Left")
+local CombatGroup2 = Combat:CreateGroupbox("Silent Aim", "Right")
+local CombatGroup3 = Combat:CreateGroupbox("Player", "Left")
+
+local TeleportsGroup = Teleports:CreateGroupbox("Teleports", "Right")
+
+CombatGroup1:CreateToggle("Reach", function(state)
+end)
+
+CombatGroup1:CreateButton("Aimlock [E]", function()
+end)
+
+CombatGroup2:CreateButton("Silent Aim [Click to enable]", function()
+end)
+
+CombatGroup2:CreateToggle("Show Fov", function(state)
+end)
+
+CombatGroup2:CreateSlider("FOV",0,100,25, function(value)
+end)
+
+CombatGroup2:CreateSlider("Hit Chance",0,100,50, function(value)
+end)
+
+CombatGroup3:CreateButton("Headless", function()
+    if game.Players.LocalPlayer.Character:FindFirstChild("Head") then
+        game.Players.LocalPlayer.Character:FindFirstChild("Head").Transparency = 1
+        if game.Players.LocalPlayer.Character.Head:FindFirstChild("face") then
+            game.Players.LocalPlayer.Character.Head:FindFirstChild("face").Transparency = 1
+        end
+    end
+end)
+
+
+TeleportsGroup:CreateButton("DB", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new()
+end)
+TeleportsGroup:CreateButton("Revolver", function()
+end)
+TeleportsGroup:CreateButton("Bank", function()
+end)
+TeleportsGroup:CreateButton("Gas Station", function()
+end)
+TeleportsGroup:CreateButton("Food Store", function()
+end)
+
+local CreditsGroup = Credits:CreateGroupbox("Credits", "Right")
+CreditsGroup:CreateButton("Made by ray#0008", function(bool)
+    setclipboard("https://discord.gg/cn4EmVVuQR")
+    wait(1)
+    local function callback(text)
+        if text == "Yes" then
+        print("User said yes")
+        elseif text == "No" then
+        print("User said no")
+        end
+    end
+end)
+ 
